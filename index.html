@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+	<title>z-notif</title>
+	<link rel="stylesheet" href="css/z-grid.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<section class="sidebar align-center">
+		
+		<h1 class="light">Z-Notif</h1>
+		
+		<p>A little VanillaJs plugin displaying stylish notifications.</p>
+		
+		<p>
+			<a href="http://github.com/benavern/z-notif" class="button">Github</a>
+			<a href="z-notif/z-notif.js" class="button" download="z-notif.js">Download</a>
+		</p>
+		
+		<p>
+			Made with <span class="pink">♥</span> by <br> <a href="http://caradeuc.info">© Benjamin Caradeuc</a>
+		</p>
+		
+	</section>
+	
+	<section class="content">
+		<h1>
+			What is Z-Notif ?
+		</h1>
+	
+		<p>
+			Z-Notif is a javascript plugin that lets you create notifications very easily. 
+			The notifications will appear on the top right corner of your screen, you can click them and they will disapear.
+		</p>
+		<p>
+			It was just an exercise for me to practice object oriented programmation and method in <a href="http://vanilla-js.com/">vanillaJs</a>.
+		</p>
+		
+		<hr>
+		
+		<h1>Demo</h1>
+		
+		<p class="align-center">
+			<button onclick="NOTIFICATION.note('This is the default notification.', 3000)">Note</button>
+			<button onclick="NOTIFICATION.success('This is for successfull events.', 3000)">Success</button>
+			<button onclick="NOTIFICATION.warning('This is for warnings!!', 3000)">Warning</button>
+			<button onclick="NOTIFICATION.error('This can display errors...', 3000)">Error</button>
+		</p>
+		
+		<hr>
+		
+		<h1>How to</h1>
+		
+		<p>This plugin is very simple. You just have to create an instance of the ZNotif Class each time you want to display one. It can be any event you want.</p>
+		
+		<p>Some parameters are available:</p>
+		
+		<ul>
+			<li>
+				<b>TYPE</b>: (Default: "note") the notification type :
+				<ul>
+					<li>"note" : Blue notification.</li>
+					<li>"success" : Green notification.</li>
+					<li>"warning" : Orange notification.</li>
+					<li>"error" : Red notification.</li>
+				</ul>
+			</li>
+			<li><b>TEXT</b> : (Default: "Hello, World!") the text that will be inserted.</li>
+			<li><b>DURATION</b> : (Default: 3000) how long will the notification be displayed. (milliseconds)</li>
+			<li><b>PREPEND</b> : (Default: true) whether the notification type will prepend the notification content.</li> 
+		</ul>
+		
+		<hr>
+		
+		<h1>Examples</h1>
+		
+		<h2>Link click + no argument</h2>
+		<p>This will show the default notification when the link is clicked.</p>
+		<pre>&lt;a href="#" id="test1"&gt;Test 1&lt;/a&gt;</pre>
+		<pre>var <span class="green">test1</span> = document.getElementById("test1");<br><span class="green">test1</span>.addEventListener('click', function(e){<br>   <span class="red">new ZNotif();</span><br>   e.preventDefault;<br>});</pre>
+		<p><a href="#" id="test1">Test 1</a></p>
+
+		<hr>
+
+		<h2>Button click + 2 arguments</h2>
+		<p>When you click the button, A success notification will be displayed withe the text you specified.</p>
+		<pre>&lt;button id="test2"&gt;Test 2&lt;/button&gt;</pre>
+		<pre>var <span class="green">test2</span> = document.getElementById("test2");<br><span class="green">test2</span>.addEventListener('click', function(e){<br>   <span class="red">new ZNotif("success", "I successfully made a beautiful notification!");</span><br>   e.preventDefault;<br>});</pre>
+		<p><button id="test2">Test 2</button></p>
+		
+		<hr>
+		
+		<h2>Hover + 3 arguments</h2>
+		<p>When your mouse pointer hovers over the area, a warning notification shows up and stays there for 1 second (1000ms).</p>
+		<pre>&lt;a href="#" id="test3"&gt;Test 3&lt;/a&gt;</pre>
+		<pre>var <span class="green">test3</span> = document.getElementById("test3");<br><span class="green">test3</span>.addEventListener('mouseover', function(e){<br>   <span class="red">new ZNotif("Warning", "My cat will eat your mouse pointer!", 1000);</span><br>   e.preventDefault;<br>});</pre>
+		<div class="hover" id="test3">HoverMe!</div>
+		
+		<hr>
+		
+		<h2>Input keyup + 4 arguments</h2>
+		<p>When you are typing in the input, on each keyup, a notification shows up with the inputs value as a content textand disapears in 500ms.</p>
+		<pre>&lt;a href="#" id="test4"&gt;Test 4&lt;/a&gt;</pre>
+		<pre>var <span class="green">test4</span> = document.getElementById("test4");<br><span class="green">test4</span>.addEventListener('keyup', function(e){<br>   var newtext = "" + <span class="green">test4</span>.value;<br>   <span class="red">new ZNotif("error", newtext, 500, false);</span><br>   e.preventDefault;<br>});</pre>
+		<input type="text" id="test4">
+			
+			
+		<br>
+		
+		<p>Suggestions, issues, etc... are welcome, on the github issue section.</p>
+		
+		
+	</section>
+	
+	
+	<script src="z-notif/z-notif.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
