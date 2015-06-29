@@ -32,7 +32,7 @@ window.onload = function(){
 	var test3 = document.getElementById("test3");
 	test3.addEventListener('mouseover', function(e){
 		e.preventDefault;
-		new ZNotif("Warning", "My cat will eat your mouse pointer!", 1000);
+		new ZNotif("warning", "My cat will eat your mouse pointer!", 1000);
 	});
 	
 	var test4 = document.getElementById("test4");
